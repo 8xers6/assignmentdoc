@@ -11,6 +11,10 @@ function Navbar()  {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   const toggleForm = () => {
     setShowForm(!showForm);
   };
@@ -54,28 +58,28 @@ function Navbar()  {
           </div>
 
           <div className={`flex flex-col lg:flex-row lg:items-center text-gray-600 uppercase tracking-wide text-[13px] ${isOpen ? 'block' : 'hidden'} lg:flex`}>
-            <a href="https://hansenpartners.net/team" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
+            <a href="https://hansenpartners.net/team" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8" onClick={closeMenu}>
               MEET THE TEAM
             </a>
-            <a href="https://hansenpartners.net/home-search/listings" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
+            <a href="https://hansenpartners.net/home-search/listings" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8" onClick={closeMenu}>
               SEARCH FOR HOMES
             </a>
-            <a href="https://hansenpartners.net/neighborhoods" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
+            <a href="https://hansenpartners.net/neighborhoods" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8" onClick={closeMenu}>
               OUR COMMUNITIES
             </a>
-            <a href="https://hansenpartners.net/home-valuation" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
+            <a href="https://hansenpartners.net/home-valuation" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8" onClick={closeMenu}>
               HOME VALUATION
             </a>
-            <a href="https://hansenpartners.net/services" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
+            <a href="https://hansenpartners.net/services" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8" onClick={closeMenu}>
               SERVICES
             </a>
-            <a href="https://hansenpartners.net/FeaturedListingHOA" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
+            <a href="https://hansenpartners.net/FeaturedListingHOA" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8" onClick={closeMenu}>
               Homes Across America
             </a>
-            <a href="https://hansenpartners.net/testimonials" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
+            <a href="https://hansenpartners.net/testimonials" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8" onClick={closeMenu}>
               TESTIMONIALS
             </a>
-            <a href="#contact" onClick={toggleForm} className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
+            <a href="#contact" onClick={() => { toggleForm(); closeMenu(); }} className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
               CONTACT US
             </a>
           </div>
@@ -108,7 +112,7 @@ function Navbar()  {
         </div>
         {showForm && (
           <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl relative contact-form-container">
+            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative contact-form-container">
               <button
                 onClick={toggleForm}
                 className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
