@@ -33,7 +33,7 @@ function Contactus() {
       </div>
       {showForm && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl relative">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-70% max-w-3xl relative">
             <ContactForm toggleForm={toggleForm} />
           </div>
         </div>
