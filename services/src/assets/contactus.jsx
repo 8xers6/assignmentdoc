@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ContactForm from './Contactform'; 
 
 function Contactus() {
@@ -7,6 +7,21 @@ function Contactus() {
   const toggleForm = () => {
     setShowForm(!showForm);
   };
+
+  useEffect(() => {
+    if (showForm) {
+      // Disable scrolling
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Enable scrolling
+      document.body.style.overflow = 'auto';
+    }
+
+    // Cleanup function to ensure overflow is reset when component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [showForm]);
 
   return (
     <div className="relative" id="contactform">
