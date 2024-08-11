@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import ContactForm from './Contactform'; 
 
 function Contactus() {
@@ -35,32 +34,7 @@ function Contactus() {
       {showForm && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl relative">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center gap-8">
-              <div className="bg-black text-white p-6 rounded-lg flex-1 lg:w-1/2">
-                <div className="mb-4 flex items-center">
-                  <FaPhone className="text-blue-400 mr-2" />
-                  <p className="text-sm">
-                    <strong>Phone:</strong> (925) 553-6707
-                  </p>
-                </div>
-                <div className="mb-4 flex items-center">
-                  <FaEnvelope className="text-blue-400 mr-2" />
-                  <p className="text-sm">
-                    <strong>Email:</strong>{' '}
-                    <a href="mailto:luxuryhomesinc@icloud.com" className="text-blue-400 hover:underline">
-                      luxuryhomesinc@icloud.com
-                    </a>
-                  </p>
-                </div>
-                <div className="mb-4 flex items-center">
-                  <FaMapMarkerAlt className="text-blue-400 mr-2" />
-                  <p className="text-sm">
-                    <strong>Address:</strong> 4337 Chabot Drive, Pleasanton, CA 94588
-                  </p>
-                </div>
-              </div>
-              <ContactForm toggleForm={toggleForm} />
-            </div>
+            <ContactForm toggleForm={toggleForm} />
           </div>
         </div>
       )}
