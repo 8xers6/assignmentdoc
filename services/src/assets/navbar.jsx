@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaTimes, FaMapMarkerAlt } from 'react-icons/fa';
 import ContactForm from './Contactform';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
@@ -9,10 +9,6 @@ function Navbar()  {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false);
   };
 
   const toggleForm = () => {
@@ -58,28 +54,28 @@ function Navbar()  {
           </div>
 
           <div className={`flex flex-col lg:flex-row lg:items-center text-gray-600 uppercase tracking-wide text-[13px] ${isOpen ? 'block' : 'hidden'} lg:flex`}>
-            <a href="https://hansenpartners.net/team" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8" onClick={closeMenu}>
+            <a href="https://hansenpartners.net/team" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
               MEET THE TEAM
             </a>
-            <a href="https://hansenpartners.net/home-search/listings" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8" onClick={closeMenu}>
+            <a href="https://hansenpartners.net/home-search/listings" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
               SEARCH FOR HOMES
             </a>
-            <a href="https://hansenpartners.net/neighborhoods" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8" onClick={closeMenu}>
+            <a href="https://hansenpartners.net/neighborhoods" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
               OUR COMMUNITIES
             </a>
-            <a href="https://hansenpartners.net/home-valuation" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8" onClick={closeMenu}>
+            <a href="https://hansenpartners.net/home-valuation" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
               HOME VALUATION
             </a>
-            <a href="https://hansenpartners.net/services" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8" onClick={closeMenu}>
+            <a href="https://hansenpartners.net/services" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
               SERVICES
             </a>
-            <a href="https://hansenpartners.net/FeaturedListingHOA" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8" onClick={closeMenu}>
+            <a href="https://hansenpartners.net/FeaturedListingHOA" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
               Homes Across America
             </a>
-            <a href="https://hansenpartners.net/testimonials" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8" onClick={closeMenu}>
+            <a href="https://hansenpartners.net/testimonials" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
               TESTIMONIALS
             </a>
-            <a href="#contact" onClick={() => { toggleForm(); closeMenu(); }} className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
+            <a href="#contact" onClick={toggleForm} className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
               CONTACT US
             </a>
           </div>
@@ -111,33 +107,39 @@ function Navbar()  {
           <h2 className="text-5xl font-serif font-bold text-white">SERVICES</h2>
         </div>
         {showForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl relative">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center gap-8">
-              <div className="bg-black text-white p-6 rounded-lg flex-1 lg:w-1/2">
-                <div className="mb-4 flex items-center">
-                  <FaPhone className="text-blue-400 mr-2" />
-                  <p className="text-sm">
-                    <strong>Phone:</strong> (925) 553-6707
-                  </p>
+          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl relative contact-form-container">
+              <button
+                onClick={toggleForm}
+                className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
+              >
+                <FaTimes size={24} />
+              </button>
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center gap-8">
+                <div className="bg-black text-white p-6 rounded-lg flex-1 lg:w-1/2">
+                  <div className="mb-4 flex items-center">
+                    <FaPhone className="text-blue-400 mr-2" />
+                    <p className="text-sm">
+                      <strong>Phone:</strong> (925) 553-6707
+                    </p>
+                  </div>
+                  <div className="mb-4 flex items-center">
+                    <FaEnvelope className="text-blue-400 mr-2" />
+                    <p className="text-sm">
+                      <strong>Email:</strong>{' '}
+                      <a href="mailto:luxuryhomesinc@icloud.com" className="text-blue-400 hover:underline">
+                        luxuryhomesinc@icloud.com
+                      </a>
+                    </p>
+                  </div>
+                  <div className="mb-4 flex items-center">
+                    <FaMapMarkerAlt className="text-blue-400 mr-2" />
+                    <p className="text-sm">
+                      <strong>Address:</strong> 4337 Chabot Drive, Pleasanton, CA 94588
+                    </p>
+                  </div>
                 </div>
-                <div className="mb-4 flex items-center">
-                  <FaEnvelope className="text-blue-400 mr-2" />
-                  <p className="text-sm">
-                    <strong>Email:</strong>{' '}
-                    <a href="mailto:luxuryhomesinc@icloud.com" className="text-blue-400 hover:underline">
-                      luxuryhomesinc@icloud.com
-                    </a>
-                  </p>
-                </div>
-                <div className="mb-4 flex items-center">
-                  <FaMapMarkerAlt className="text-blue-400 mr-2" />
-                  <p className="text-sm">
-                    <strong>Address:</strong> 4337 Chabot Drive, Pleasanton, CA 94588
-                  </p>
-                </div>
-              </div>
-              <ContactForm toggleForm={toggleForm} />
+                <ContactForm toggleForm={toggleForm} />
               </div>
             </div>
           </div>
