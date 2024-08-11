@@ -57,7 +57,7 @@ const ContactForm = ({ toggleForm }) => {
         </div>
         <button
           type="submit"
-          className="bg-white text-black p-2 rounded hover:bg-black hover:text-white transition-colors duration-300 w-full"
+          className="bg-black text-white p-2 rounded hover:bg-white hover:text-black transition-colors duration-300 w-full"
         >
           Send
         </button>
