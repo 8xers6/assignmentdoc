@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 function SellingProcess() {
   return (
@@ -24,7 +25,14 @@ function SellingProcess() {
               key={index}
               className="flex flex-col items-center justify-center p-4"
             >
-              <h3 className="text-7xl font-serif  text-white mb-2">{item.label}</h3>
+              <motion.h3
+                className="text-7xl font-serif text-white mb-2"
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.5 }}
+              >
+                {item.label}
+              </motion.h3>
               <p className="text-lg text-white text-center">{item.description}</p>
             </div>
           ))}
