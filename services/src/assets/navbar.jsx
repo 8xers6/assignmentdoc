@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FaPhone, FaEnvelope, FaTimes, FaMapMarkerAlt } from 'react-icons/fa';
-import ContactForm from './Contactform';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 function Navbar()  {
@@ -11,9 +9,6 @@ function Navbar()  {
     setIsOpen(!isOpen);
   };
 
-  const toggleForm = () => {
-    setShowForm(!showForm);
-  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -75,25 +70,12 @@ function Navbar()  {
             <a href="https://hansenpartners.net/testimonials" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
               TESTIMONIALS
             </a>
-            <a href="#contact" onClick={toggleForm} className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
+            <a href="#contactform" className="py-2 px-4 hover:text-gray-900 hover:underline underline-offset-8">
               CONTACT US
             </a>
           </div>
 
-          <div className="hidden lg:flex lg:ml-8">
-            <div className="relative w-full max-w-xs">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="w-full py-2 pl-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 text-[13px]"
-              />
-              <button className="absolute inset-y-0 right-0 flex items-center px-3">
-                <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 4a7 7 0 100 14 7 7 0 000-14zm0 14a7 7 0 110-14 7 7 0 010 14zm0 0l6 6" />
-                </svg>
-              </button>
-            </div>
-          </div>
+          
         </div>
       </nav>
 
@@ -106,44 +88,7 @@ function Navbar()  {
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <h2 className="text-5xl font-serif font-bold text-white">SERVICES</h2>
         </div>
-        {showForm && (
-          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl relative contact-form-container">
-              <button
-                onClick={toggleForm}
-                className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
-              >
-                <FaTimes size={24} />
-              </button>
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center gap-8">
-                <div className="bg-black text-white p-6 rounded-lg flex-1 lg:w-1/2">
-                  <div className="mb-4 flex items-center">
-                    <FaPhone className="text-blue-400 mr-2" />
-                    <p className="text-sm">
-                      <strong>Phone:</strong> (925) 553-6707
-                    </p>
-                  </div>
-                  <div className="mb-4 flex items-center">
-                    <FaEnvelope className="text-blue-400 mr-2" />
-                    <p className="text-sm">
-                      <strong>Email:</strong>{' '}
-                      <a href="mailto:luxuryhomesinc@icloud.com" className="text-blue-400 hover:underline">
-                        luxuryhomesinc@icloud.com
-                      </a>
-                    </p>
-                  </div>
-                  <div className="mb-4 flex items-center">
-                    <FaMapMarkerAlt className="text-blue-400 mr-2" />
-                    <p className="text-sm">
-                      <strong>Address:</strong> 4337 Chabot Drive, Pleasanton, CA 94588
-                    </p>
-                  </div>
-                </div>
-                <ContactForm toggleForm={toggleForm} />
-              </div>
-            </div>
-          </div>
-        )}
+       
       </section>
     </>
   );
