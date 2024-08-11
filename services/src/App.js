@@ -10,14 +10,13 @@ import Affiate from './assets/affliate';
 import Contactus from './assets/contactus';
 import Beforefooter from './assets/beforefooter';
 import Footer from './assets/Footer';
-import ScrollToTopButton from './assets/scrollup';
 function App() {
   return (
    
     
       <>
       <Navbar/>
-      <ScrollToTopButton/>
+ 
       <Marketingplan/>
       <CarouselWithText/>
       <SellingProcess/>
