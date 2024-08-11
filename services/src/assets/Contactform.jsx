@@ -3,16 +3,16 @@ import { FaTimes } from 'react-icons/fa';
 
 const ContactForm = ({ toggleForm }) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-center max-w-lg mx-auto">
+    <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center max-w-lg mx-auto max-h-[80vh] overflow-y-auto relative">
       <button
         onClick={toggleForm}
         className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
       >
         <FaTimes size={24} />
       </button>
-      <h2 className="text-2xl font-bold text-center mb-6">Submit A Message</h2>
+      <h2 className="text-2xl font-bold text-center mb-4">Submit A Message</h2>
       <form className="w-full">
-        <div className="mb-4">
+        <div className="mb-3">
           <label className="block text-gray-700 mb-1">Name</label>
           <input
             type="text"
@@ -20,7 +20,7 @@ const ContactForm = ({ toggleForm }) => {
             required
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-3">
           <label className="block text-gray-700 mb-1">Phone</label>
           <input
             type="text"
@@ -28,7 +28,7 @@ const ContactForm = ({ toggleForm }) => {
             required
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-3">
           <label className="block text-gray-700 mb-1">Email</label>
           <input
             type="email"
@@ -36,15 +36,15 @@ const ContactForm = ({ toggleForm }) => {
             required
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-3">
           <label className="block text-gray-700 mb-1">Message</label>
           <textarea
             className="w-full p-2 border border-gray-300 rounded"
-            rows="4"
+            rows="3"
             required
           ></textarea>
         </div>
-        <div className="mb-4 flex items-center text-xs">
+        <div className="mb-3 flex items-center text-xs">
           <input
             type="checkbox"
             id="agree"
